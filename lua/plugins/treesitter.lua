@@ -1,3 +1,4 @@
+--Its stolen from reddit user u/aribert <3
 return {
   'nvim-treesitter/nvim-treesitter',
   dependencies = {
