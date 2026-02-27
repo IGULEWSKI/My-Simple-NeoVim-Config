@@ -9,6 +9,9 @@ return {
     lazy = false, -- neo-tree will lazily load itself
   config = function()
     vim.keymap.set('n','<C-n>',':Neotree filesystem reveal left <CR>')
+    require("neo-tree").setup({window = {
+      position = "left",
+      width = 30}})
   end
 }
 
