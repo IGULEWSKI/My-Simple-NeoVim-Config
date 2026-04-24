@@ -1,8 +1,26 @@
 return {
 	-- Commenting shortcut gc
 	{ "numToStr/Comment.nvim", opts = {} },
-	--Rainbow
-	{ "HiPhish/rainbow-delimiters.nvim" },
+	-- Rainbow Delimiters
+	{
+		"HiPhish/rainbow-delimiters.nvim",
+		config = function()
+			require("rainbow-delimiters.setup").setup({
+				blacklist = {
+					"toggleterm",
+					"NvimTree",
+					"alpha",
+					"TelescopePrompt",
+					"telescope",
+					"notify",
+					"help",
+					"lazy",
+					"mason",
+					"noice",
+				},
+			})
+		end,
+	},
 	{ --ultimate autopair
 		"altermo/ultimate-autopair.nvim",
 		event = { "InsertEnter", "CmdlineEnter" },
@@ -23,4 +41,25 @@ return {
 			require("alpha").setup(startify.config)
 		end,
 	},
+	{
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		config = function()
+			require("toggleterm").setup({
+				open_mapping = [[<c-_>]],
+				direction = "horizontal",
+				size = 10,
+			})
+		end,
+	},
+  { -- bracket surround
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use main branch for latest features
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty for defaults
+        })
+    end
+}
 } --koniec spec !!!!!!!!!!!!

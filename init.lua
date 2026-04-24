@@ -21,15 +21,4 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 --Basic vim options
 require("simple-options")
---For now so i can learn how to not use arrowkeys and hjkl instead
-vim.keymap.set('n', '<Up>', '<Nop>', { silent = true })
-vim.keymap.set('n', '<Down>', '<Nop>', { silent = true })
-vim.keymap.set('n', '<Left>', '<Nop>', { silent = true })
-vim.keymap.set('n', '<Right>', '<Nop>', { silent = true })
-vim.diagnostic.config({
-  virtual_text = true,
-  signs = true,
-  underline = true,
-  update_in_insert = false,
-  severity_sort = true
-})
+require("scripts.runtoggleterm")
