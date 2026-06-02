@@ -6,33 +6,19 @@ return {
 		"HiPhish/rainbow-delimiters.nvim",
 		config = function()
 			require("rainbow-delimiters.setup").setup({
-				blacklist = {
-					"toggleterm",
-					"NvimTree",
-					"alpha",
-					"TelescopePrompt",
-					"telescope",
-					"notify",
-					"help",
-					"lazy",
-					"mason",
-					"noice",
-				},
 			})
 		end,
 	},
-	{ --ultimate autopair
-		"altermo/ultimate-autopair.nvim",
-		event = { "InsertEnter", "CmdlineEnter" },
-		branch = "v0.6", --recommended as each new version will have breaking changes
-		opts = {
-      --config here
-    },
-	},
+	-- { --ultimate autopair
+	-- 	"altermo/ultimate-autopair.nvim",
+	-- 	event = { "InsertEnter", "CmdlineEnter" },
+	-- 	branch = "v0.6", --recommended as each new version will have breaking changes
+	-- 	opts = {
+ --      --config here
+ --    },
+	-- },
 	{
-		"goolord/alpha-nvim",
-		-- dependencies = { 'nvim-mini/mini.icons' },
-		dependencies = { "nvim-tree/nvim-web-devicons" },
+		"goolord/alpha-nvim", -- dependencies = { 'nvim-mini/mini.icons' }, dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
 			local startify = require("alpha.themes.startify")
 			-- available: devicons, mini, default is mini
@@ -62,4 +48,4 @@ return {
 			})
 		end,
 	},
-} --koniec spec !!!!!!!!!!!!
+ } --koniec spec !!!!!!!!!!!!
