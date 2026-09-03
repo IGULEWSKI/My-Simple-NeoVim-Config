@@ -5,18 +5,19 @@ return {
 	{
 		"HiPhish/rainbow-delimiters.nvim",
 		config = function()
-			require("rainbow-delimiters.setup").setup({
-			})
+			require("rainbow-delimiters.setup").setup({})
 		end,
 	},
-	-- { --ultimate autopair
-	-- 	"altermo/ultimate-autopair.nvim",
-	-- 	event = { "InsertEnter", "CmdlineEnter" },
-	-- 	branch = "v0.6", --recommended as each new version will have breaking changes
-	-- 	opts = {
- --      --config here
- --    },
-	-- },
+	{ --ultimate autopair
+		"altermo/ultimate-autopair.nvim",
+		event = { "InsertEnter", "CmdlineEnter" },
+		branch = "v0.6", --recommended as each new version will have breaking changes
+		opts = {
+			--config here
+			bs = { enable = false },
+		},
+	},
+
 	{
 		"goolord/alpha-nvim", -- dependencies = { 'nvim-mini/mini.icons' }, dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
@@ -48,4 +49,4 @@ return {
 			})
 		end,
 	},
- } --koniec spec !!!!!!!!!!!!
+} --koniec spec !!!!!!!!!!!!

@@ -1,4 +1,4 @@
-return
+return --It's not working if someone could fix it would be cool, its suppose to use tab to leave opened braces but it disables normal tab function
   {
     -- 'abecodes/tabout.nvim',
     -- lazy = false,
