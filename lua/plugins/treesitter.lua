@@ -41,6 +41,7 @@ return {
                 'lua',
                 'vim',
                 'c',
+                'haskell',
         }, {
           max_jobs = 8,
         })
@@ -75,6 +76,7 @@ return {
       'snacks_dashboard',
       'snacks_notif',
       'snacks_win',
+      'neo-tree',
     }
 
     -- Auto-install parsers and enable highlighting on FileType

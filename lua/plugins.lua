@@ -50,3 +50,4 @@ return {
 		end,
 	},
 } --koniec spec !!!!!!!!!!!!
+
