@@ -26,6 +26,7 @@ return {
       vim.lsp.enable("lua_ls")
       vim.lsp.enable("pyright")
       vim.lsp.enable("clangd")
+      vim.lsp.enable('sqls')
       vim.keymap.set('n','K',vim.lsp.buf.hover,{}) --Small documentation preview
       vim.keymap.set('n','gd',vim.lsp.buf.definition,{}) --goes to definition
       vim.keymap.set({'n','v'},'<leader>ca',vim.lsp.buf.code_action,{}) -- code actions

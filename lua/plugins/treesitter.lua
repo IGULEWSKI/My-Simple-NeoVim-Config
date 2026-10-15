@@ -42,6 +42,7 @@ return {
                 'vim',
                 'c',
                 'haskell',
+                'sql',
         }, {
           max_jobs = 8,
         })
