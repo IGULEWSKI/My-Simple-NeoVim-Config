@@ -12,9 +12,9 @@ return {
 			"lint",
 			"--format=json",
 			"--dialect=tsql",
-			"--force", -- Wymusza analizę plików w /tmp/ bez rozszerzenia .sql
-			"--ignore=capitalisation,layout,structure,ambiguous", -- Wyłącza czepianie się małych liter, formatowania i gwiazdek
-			"-", -- Wymusza czytanie ze stdin
+			"--exclude-rules",
+			"capitalisation,layout,structure,ambiguous",
+			"-",
 		}
 		sqlfluff.stdin = true
 
