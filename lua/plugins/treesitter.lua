@@ -38,11 +38,12 @@ return {
       once = true,
       callback = function()
         ts.install({
-                'lua',
-                'vim',
-                'c',
-                'haskell',
-                'sql',
+          'lua',
+          'vim',
+          'c',
+          'haskell',
+          'sql',
+          'bibtex',
         }, {
           max_jobs = 8,
         })
@@ -78,6 +79,8 @@ return {
       'snacks_notif',
       'snacks_win',
       'neo-tree',
+      'tex',
+      'latex',
     }
 
     -- Auto-install parsers and enable highlighting on FileType

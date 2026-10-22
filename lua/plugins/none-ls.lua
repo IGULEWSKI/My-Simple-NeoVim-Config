@@ -9,6 +9,7 @@ return {
 				null_ls.builtins.formatting.isort,
 			},
 		})
-		vim.keymap.set("n", "<leader>fr", vim.lsp.buf.format, {})
+    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "LSP Rename" })
+		vim.keymap.set("n", "<leader>fr", vim.lsp.buf.format, { desc = "Code Formatter" })
 	end,
 }

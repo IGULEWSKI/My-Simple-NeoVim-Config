@@ -1,36 +1,38 @@
 return {
-   {
-    "mason-org/mason.nvim",
-    opts = {},
-  config = function()
-    require("mason").setup()
-  end
-  },
-  {
-    "mason-org/mason-lspconfig.nvim",
-    opts = {},
-    dependencies = {
-        { "mason-org/mason.nvim", opts = {} }
-    },
-  config = function()
-      require("mason-lspconfig").setup({
-        ensure_installed = {"lua_ls","pyright","clangd"}
-      })
-  end
-  },
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      vim.lsp.config("*",{
-      capabilities=require('cmp_nvim_lsp').default_capabilities()})
-      vim.lsp.enable("lua_ls")
-      vim.lsp.enable("pyright")
-      vim.lsp.enable("clangd")
-      vim.lsp.enable('sqls')
-      vim.keymap.set('n','K',vim.lsp.buf.hover,{}) --Small documentation preview
-      vim.keymap.set('n','gd',vim.lsp.buf.definition,{}) --goes to definition
-      vim.keymap.set({'n','v'},'<leader>ca',vim.lsp.buf.code_action,{}) -- code actions
-    end
-  }
+	{
+		"mason-org/mason.nvim",
+		opts = {},
+		config = function()
+			require("mason").setup()
+		end,
+	},
+	{
+		"mason-org/mason-lspconfig.nvim",
+		opts = {},
+		dependencies = {
+			{ "mason-org/mason.nvim", opts = {} },
+		},
+		config = function()
+			require("mason-lspconfig").setup({
+				ensure_installed = { "lua_ls", "pyright", "clangd", "texlab", "sqls", "hls" },
+			})
+		end,
+	},
+	{
+		"neovim/nvim-lspconfig",
+		config = function()
+			vim.lsp.config("*", {
+				capabilities = require("cmp_nvim_lsp").default_capabilities(),
+			})
+			vim.lsp.enable("lua_ls")
+			vim.lsp.enable("pyright")
+			vim.lsp.enable("clangd")
+			vim.lsp.enable("sqls")
+			vim.lsp.enable("texlab")
+			vim.lsp.enable("hls")
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, {}) --Small documentation preview
+			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {}) --goes to definition
+			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {}) -- code actions
+		end,
+	},
 }
-

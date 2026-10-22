@@ -2,8 +2,8 @@
 local function runcmd()
 	local filepath = vim.fn.expand("%:p")
 	local extension = vim.fn.expand("%:e")
-	local filenoex = vim.fn.expand("%:p:r")	
-  local filetype = vim.bo.filetype
+	local filenoex = vim.fn.expand("%:p:r")
+	local filetype = vim.bo.filetype
 	local dod
 	if filenoex:sub(1, 1) == "/" then
 		dod = ""
@@ -17,14 +17,14 @@ local function runcmd()
 		hs = "ghc " .. filepath .. " -o " .. filenoex .. " && " .. dod .. filenoex .. " && echo ''",
 	}
 	if not commands[extension] then
-    if filetype == "sql" then
-		  vim.cmd("write")
-		  return
-	  end
+		if filetype == "sql" or filetype == "tex" then
+			vim.cmd("write")
+			return
+		end
 		vim.notify("Nieobsługiwane rozszerzenie: " .. extension, vim.log.levels.WARN)
 		return
 	end
-  vim.cmd("write")
+	vim.cmd("write")
 	require("toggleterm").exec(commands[extension])
 end
 vim.keymap.set({ "n", "v" }, "<leader>r", runcmd, { desc = "Save and Run code" })
