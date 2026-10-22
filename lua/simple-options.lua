@@ -1,7 +1,7 @@
 --Podstawy
-vim.opt.tabstop = 2 -- Visual width of a tab
-vim.opt.softtabstop = 2 -- Number of spaces a tab counts for while editing
-vim.opt.shiftwidth = 2 -- Size of an indent (for the << and >> commands)
+vim.opt.tabstop = 2      -- Visual width of a tab
+vim.opt.softtabstop = 2  -- Number of spaces a tab counts for while editing
+vim.opt.shiftwidth = 2   -- Size of an indent (for the << and >> commands)
 vim.opt.expandtab = true -- Turn tabs into spaces (highly recommended)
 vim.opt.clipboard = "unnamedplus"
 vim.opt.number = true
@@ -18,12 +18,16 @@ vim.keymap.set("n", "<Left>", "<Nop>", { silent = true })
 vim.keymap.set("n", "<Right>", "<Nop>", { silent = true })
 --diagnostic
 vim.diagnostic.config({
-	virtual_text = true,
-	signs = true,
-	underline = true,
-	update_in_insert = false,
-	severity_sort = true,
-}) --auto terminal mode
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  severity_sort = true,
+})
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineError", { undercurl = true, sp = "Red" })
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn",  { undercurl = true, sp = "Yellow" })
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo",  { undercurl = true, sp = "LightBlue" })
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint",  { undercurl = true, sp = "LightGrey" })
+--auto terminal mode
 vim.api.nvim_create_autocmd({ "WinEnter", "BufWinEnter", "TermOpen" }, {
 	group = vim.api.nvim_create_augroup("terminal_auto_insert", { clear = true }),
 	pattern = "term://*",
